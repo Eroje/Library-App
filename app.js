@@ -1,4 +1,5 @@
-class Media {
+
+class Media { // Parent class for book, movie and CD
     constructor(title) {
       this._title = title;
       this._isCheckedOut = false;
@@ -66,7 +67,7 @@ class Media {
     }
   }
   
-  class CD extends Media { // Second child of the Media class
+  class CD extends Media { // Third child of the Media class
     constructor(artist, title, songs) {
       super(title);
       this._artist = artist;
@@ -84,19 +85,19 @@ class Media {
   
   const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544); // This creates a Book Instance
   historyOfEverything.toggleCheckOutStatus(); // Calls
-  console.log(historyOfEverything.isCheckedOut);
+  console.log(historyOfEverything.isCheckedOut); // Prints true
   historyOfEverything.addRating(4); // Calls
   historyOfEverything.addRating(5); // Calls
   historyOfEverything.addRating(5); // Calls
-  console.log(historyOfEverything.getAverageRating());
+  console.log(historyOfEverything.getAverageRating()); // Prints 4.66666666667
   
   const speed = new Movie('Jan de Bont', 'Speed', 116); // This creates a Movie Instance
   speed.toggleCheckOutStatus();
-  console.log(speed.isCheckedOut);
+  console.log(speed.isCheckedOut); // Prints tru
   speed.addRating(1);
   speed.addRating(1);
   speed.addRating(5);
-  console.log(speed.getAverageRating());
+  console.log(speed.getAverageRating()); // Prints 2.33333333335
   
   const dearMama = new CD('Tupac Shakur', 'DearMama', 25); // This creates a CD Instance
   dearMama.toggleCheckOutStatus();
